@@ -8,15 +8,15 @@ st.subheader("Creado por :red[Alfredo Rubilar]", divider=True)
 st.caption(
     """
     Funcionamiento:\n
-    1.- Cargar archivo INV Final a analizar\n
-    2.- Cuando cargue Vista previa del archivo, presionar "Procesar Archivo"\n
-    3.- Seleccionar Tag Inicial y Tag Final, presionar "Filtrar Rango de Tag"\n
-    4.- Opcional: presionar "Descargar Resultado" para bajar txt con datos.
+    1.- Cargue o arrastre INV FINAL que desee analizar.\n
+    2.- Cuando cargue :green[*Vista previa del archivo*], presionar botón: "*Procesar Archivo*".\n
+    3.- Seleccionar :blue[*Tag Inicial*] y :blue[*Tag Final*], presionar botón: :red[*"Filtrar Rango de Tag"*].\n
+    4.- Opcional: presionar botón "Descargar Resultado" para bajar txt con datos.
     """
 )
 st.divider()
 # Subir archivo
-uploaded_file = st.file_uploader("Cargar archivo INV FINAL (TXT)", type=["txt"])
+uploaded_file = st.file_uploader("*Cargar archivo INV FINAL (TXT):*", type=["txt"])
 
 if uploaded_file is not None:
     # Leer el archivo y guardar en sesión para evitar reinicios
