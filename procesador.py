@@ -3,8 +3,9 @@ import pandas as pd
 from io import StringIO
 
 # Configurar título de la aplicación
-st.title("Rendimiento por Rango")
-st.write(
+st.title("_*Rendimiento* por :blue[RANGO]_")
+st.subheader("Creado por :red[Alfredo Rubilar]", divider=True)
+st.caption(
     """
     Funcionamiento:\n
     1.- Cargar archivo INV Final a analizar\n
@@ -13,7 +14,7 @@ st.write(
     4.- Opcional: presionar "Descargar Resultado" para bajar txt con datos.
     """
 )
-
+st.divider()
 # Subir archivo
 uploaded_file = st.file_uploader("Cargar archivo INV FINAL (TXT)", type=["txt"])
 
