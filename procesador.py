@@ -5,7 +5,7 @@ from io import StringIO
 # Configurar título de la aplicación
 st.title("_*Rendimiento* por :blue[RANGO]_")
 st.subheader("Creado por :red[Alfredo Rubilar]", divider=True)
-st.caption(
+st.info(
     """
     Funcionamiento:\n
     1.- Cargue o arrastre INV FINAL que desee analizar.\n
@@ -90,13 +90,14 @@ if "df_procesado" in st.session_state:
             ph = total_unidades / (horas * operadores_unicos) if horas > 0 and operadores_unicos > 0 else 0
 
             # Mostrar resultados
-            st.write("**Resultados del análisis para el rango seleccionado:**")
-            st.write(f"Tiempo inicial: {tiempo_inicial}")
-            st.write(f"Tiempo final: {tiempo_final}")
-            st.write(f"Duración (horas): {horas:.2f}")
-            st.write(f"Total de unidades: {total_unidades}")
-            st.write(f"Operadores únicos: {operadores_unicos}")
-            st.write(f"PH (Producción por hora): {ph:.2f}")
+            with st.container(border=True):
+                st.warning("**Resultados del análisis para el :blue[*rango seleccionado:*]**")
+                st.write(f"Tiempo inicial: {tiempo_inicial}")
+                st.write(f"Tiempo final: {tiempo_final}")
+                st.write(f"Duración (horas): {horas:.2f}")
+                st.write(f"Total de unidades: {total_unidades}")
+                st.write(f"Operadores únicos: {operadores_unicos}")
+                st.success(f"PH (Producción por hora): {ph:.2f}")
 
             # Crear archivo de resultados para descargar
             resultados = StringIO()
